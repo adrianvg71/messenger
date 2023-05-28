@@ -106,7 +106,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
             disabled={isLoading}
             type="submit"
           > 
-            Cancel
+            Create
           </Button>
         </div>
       </form>
