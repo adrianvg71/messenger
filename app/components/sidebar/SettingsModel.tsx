@@ -114,6 +114,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
             <Button
               disabled={isLoading}
               secondary
+              type="button"
               onClick={onClose}
             >
               Cancel
