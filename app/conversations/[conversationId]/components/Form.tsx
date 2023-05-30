@@ -52,6 +52,7 @@ const Form = () => {
       className="flex items-center gap-2 lg:gap-4 w-full">
         <MessageInput 
         id="message"
+        type="text"
         register={register}
         errors={errors}
         required
