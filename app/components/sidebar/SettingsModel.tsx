@@ -31,6 +31,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
     handleSubmit,
     setValue,
     watch,
+    reset,
     formState: {
       errors,
     }
@@ -60,9 +61,14 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
     .finally(() => setIsLoading(false))
   }
 
+  const close = async () => {
+    onClose()
+    reset();
+  }
+
   return ( 
     <Modal isOpen={isOpen}
-    onClose={onClose}>
+    onClose={close}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="space-y-12">
           <div className="border-b border-gay-900/10 pb-12">
@@ -115,7 +121,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
               disabled={isLoading}
               secondary
               type="button"
-              onClick={onClose}
+              onClick={close}
             >
               Cancel
             </Button>
